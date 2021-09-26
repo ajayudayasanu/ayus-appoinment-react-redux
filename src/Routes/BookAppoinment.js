@@ -5,7 +5,7 @@ const BookAppoinment = () => {
     return (
         <>
         <Container>
-            <BookingForm/>
+            <BookingForm className="booking-form"/>
         </Container>
         </>
     )
