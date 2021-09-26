@@ -1,7 +1,6 @@
 
-
 import { Icon, Input } from "semantic-ui-react";
-
+import './styles.scss'
 const PrimaryInput = (props) => {
   const { 
     width, 
@@ -36,7 +35,7 @@ const PrimaryInput = (props) => {
   } = props;
   return (
     <div className={className}>
-      {required && <Icon className="required" size="tiny" name="asterisk" />}
+      {/* {required &&className==='primaryInput' && <Icon className="required" size="tiny" name="asterisk" />} */}
 
       <Input
       action={action}
@@ -69,5 +68,9 @@ const PrimaryInput = (props) => {
     </div>
   );
 };
+
+PrimaryInput.defaultProps ={
+  className:'primaryInput'
+}
 
 export default PrimaryInput

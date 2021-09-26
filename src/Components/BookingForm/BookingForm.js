@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button,Form} from 'semantic-ui-react'
 import {Form as FinalForm ,Field} from 'react-final-form'
+import  validate  from './validate'
 import './styles.scss'
 
 //components
@@ -40,6 +41,7 @@ const BookingForm = () => {
       <div className="booking-final-form">
         <FinalForm
         onSubmit={onSubmit}
+        validate ={validate}
         render={({handleSubmit,form,submitting,pristine,invaild,values})=>(
           <Form onSubmit={handleSubmit} className='appoinment-booking-form'>
 
@@ -87,18 +89,27 @@ const BookingForm = () => {
                {...input}
                 height={50}
                options={options}
-               placeholder="Consultation Type Required"
+               topLabel="Consultation Type"
+               placeholder="Please select Consultation Type "
                handleOnChange={(value) =>input.onChange(value)}
                />)}
             </Field>
 
-            {/* <Field name='medicalConcern' options={medicalConcernOptions}>
-              {({input,meta,options})=><PrimarySelect meta={meta}
-               {...input} height={50} 
+            {/* Medical Concern drop down */}
+            <Field name='medicalConcern' 
+            options={medicalConcernOptions}>
+              {({input,meta,options})=>(
+              <PrimarySelect
+               meta={meta}
+               name={input.name}
+               {...input}
+                height={50}
                options={options}
-              // handleOnChange={(value) =>input.onChange(value)}
-               placeholder="Select Medical concern"/>}
-            </Field> */}
+               topLabel="Medical Concerne"
+               placeholder="Please select your Medical Concern"
+               handleOnChange={(value) =>input.onChange(value)}
+               />)}
+            </Field>
 
             <div className="submit-btn-container">
             <Button text="submit"  

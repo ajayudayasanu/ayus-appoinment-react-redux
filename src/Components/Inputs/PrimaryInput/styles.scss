@@ -1,0 +1,29 @@
+@import '../../../Theme/variables.scss';
+
+
+.required{
+    position: abosolute;
+    z-index: 9;
+    right: 0;
+    top:6px;
+    color:$dark-pink
+}
+.primaryInput {
+    padding-bottom: 10px;
+    position: relative;
+    .ui.input >input {
+        border-radius: 0;
+    }
+    .ui.input > input::-webkit-input-placeholder{
+        color: gray;
+        opacity: 1;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 50px;
+    }
+    .ui.input.error >input{
+        border-color: $dark-pink;
+        box-shadow: none;
+        font-size: 12px;
+    }
+}

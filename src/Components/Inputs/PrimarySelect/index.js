@@ -2,10 +2,13 @@
 import { Icon, Dropdown } from "semantic-ui-react";
 import "./styles.scss";
 const PrimarySelect = (props) => {
-  const { options, placeholder, className, required, error, handleOnChange, name, value, key, defaultValue, disabled } = props;
- const selectClasses = error ? `${className} Error`: className
+  const {meta, options, placeholder,topLabel, className, required, error, handleOnChange, name, value, key, defaultValue, disabled } = props;
+ 
+  const selectClasses = error ? `${className} Error`: className
+ const message = meta.touched && meta.error ? meta.error : topLabel;
   return (
     <div className="primary-select">
+        {message && <small className={meta.touched && meta.error ? "TopLabelError" : "TopLabel"}>{message}</small>}
         {required && className==="primarySelect" && <Icon className="Required" size="tiny" name='asterisk'/>}
       <Dropdown 
       fluid
