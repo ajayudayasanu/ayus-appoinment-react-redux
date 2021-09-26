@@ -13,7 +13,7 @@ const PrimarySelect = (props) => {
       className ={`Base ${selectClasses}`}
       placeholder={placeholder}
       options={options}
-      icon='chevron down'
+     // icon='chevron down'
       key={key || undefined}
       onChange={(e,{value}) =>handleOnChange(value)}
       name={name}

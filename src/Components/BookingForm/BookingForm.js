@@ -42,6 +42,8 @@ const BookingForm = () => {
         onSubmit={onSubmit}
         render={({handleSubmit,form,submitting,pristine,invaild,values})=>(
           <Form onSubmit={handleSubmit} className='appoinment-booking-form'>
+
+            {/* Full name */}
             <Field name='fullName'>
               {({input,meta})=>(
                 <InputField
@@ -55,6 +57,7 @@ const BookingForm = () => {
                 />)}
             </Field>
 
+             {/* Address  */}
             <Field name='address'>
               {({input,meta})=>(
               <InputField meta={meta} 
@@ -63,6 +66,7 @@ const BookingForm = () => {
                placeholder="Please enter your full address"/>)}
             </Field>
 
+            {/* Phone number  */}
             <Field name='phoneNumber'>
               {({input,meta})=>(
               <InputField
@@ -72,18 +76,21 @@ const BookingForm = () => {
                 topLabel="Phone number"
                 placeholder="Please enter your Phone number"/>)}
             </Field>
-            {/* <Field name='consultationType' 
+
+            {/* consultation Type drop down */}
+            <Field name='consultationType' 
             options={consultationOptions}>
               {({input,meta,options})=>(
               <PrimarySelect
                meta={meta}
+               name={input.name}
                {...input}
                 height={50}
                options={options}
-               onBlur={(value) =>input.onChange(value)}
                placeholder="Consultation Type Required"
+               handleOnChange={(value) =>input.onChange(value)}
                />)}
-            </Field> */}
+            </Field>
 
             {/* <Field name='medicalConcern' options={medicalConcernOptions}>
               {({input,meta,options})=><PrimarySelect meta={meta}
@@ -94,7 +101,12 @@ const BookingForm = () => {
             </Field> */}
 
             <div className="submit-btn-container">
-            <Button text="submit" width={52} fontSize={16}>
+            <Button text="submit"  
+            width={52} 
+            fontSize={16}
+            animated="fade"
+            fluid
+            >
               Submit
               </Button>
             </div>
