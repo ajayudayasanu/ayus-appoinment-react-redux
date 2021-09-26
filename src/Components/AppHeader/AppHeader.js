@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Image, Divider } from "semantic-ui-react";
+import { Header, Image } from "semantic-ui-react";
 
 export const AppHeader = () => {
   const LogoUri = "images/AyusLogo.png";
