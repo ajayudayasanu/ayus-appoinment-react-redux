@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button,Form} from 'semantic-ui-react'
+import { useHistory } from "react-router-dom";
 import {Form as FinalForm ,Field} from 'react-final-form'
 import  validate  from './validate'
 import './styles.scss'
@@ -10,7 +11,7 @@ import PrimarySelect from '../Inputs/PrimarySelect'
 
 
 const BookingForm = () => {
-
+  const history= useHistory()
 
    const consultationOptions= [
       {key:"hospitalVisit", value:"Hospital Visit",text:"Hospital Visit"},
@@ -35,6 +36,7 @@ const BookingForm = () => {
       consultationType:value.consultationType,
       medicalConcern:value.medicalConcern
     }
+    history.push('/thank-you-for-booking-appoinment')
     //console.log(appoinmentDetails)
   }
     return (
@@ -81,6 +83,7 @@ const BookingForm = () => {
 
             {/* consultation Type drop down */}
             <Field name='consultationType' 
+            className="dropdownMargin"
             options={consultationOptions}>
               {({input,meta,options})=>(
               <PrimarySelect

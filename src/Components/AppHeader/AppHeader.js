@@ -3,7 +3,8 @@ import {
   Container,
   Image,
   Menu,
-  Header
+  Header,
+  Icon
 } from 'semantic-ui-react'
 import './Styles.scss'
 export const AppHeader = () => {
@@ -16,14 +17,13 @@ export const AppHeader = () => {
     //     <Header.Subheader>Book your Appoinment</Header.Subheader>
     //   </Header.Content>
     // </Header>
-    <Menu fixed='top' >
+    <Menu borderless fixed='top' >
     <Container className="appHeader">
-      <Menu.Item as='a' header>
+      <Menu.Item as='a' header className="ayuslogo">
         <Image size='tiny' src='/images/AyusLogo.png' style={{ marginRight: '1.5em' }} />
-        <Header as='h2' className="mainHeading">Book your Appoinment</Header>
-      
+        {/* <Header as='h2' className="mainHeading">Book your Appoinment</Header> */}
       </Menu.Item>
-      {/* <Menu.Item as='a' position="right">Home</Menu.Item> */}
+      <Menu.Item as='a' position="right"><Icon name="bars" size="large"/></Menu.Item>
     </Container>
   </Menu>
   );
