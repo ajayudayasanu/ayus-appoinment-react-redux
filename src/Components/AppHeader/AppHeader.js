@@ -1,17 +1,13 @@
 import React from "react";
 import {
   Container,
-  Divider,
-  Dropdown,
-  Grid,
-  Header,
   Image,
-  List,
   Menu,
-  Segment,
+  Header
 } from 'semantic-ui-react'
+import './Styles.scss'
 export const AppHeader = () => {
-  const LogoUri = "images/AyusLogo.png";
+  // const LogoUri = "images/AyusLogo.png";
   return (
     // <Header as="h2">
     //   <Image src={LogoUri} />
@@ -20,31 +16,14 @@ export const AppHeader = () => {
     //     <Header.Subheader>Book your Appoinment</Header.Subheader>
     //   </Header.Content>
     // </Header>
-    <Menu fixed='top' inverted>
-    <Container>
+    <Menu fixed='top' >
+    <Container className="appHeader">
       <Menu.Item as='a' header>
-        <Image size='mini' src='/images/AyusLogo.png' style={{ marginRight: '1.5em' }} />
-        Book your Appoinment
+        <Image size='tiny' src='/images/AyusLogo.png' style={{ marginRight: '1.5em' }} />
+        <Header as='h2' className="mainHeading">Book your Appoinment</Header>
+      
       </Menu.Item>
-      <Menu.Item as='a'>Home</Menu.Item>
-
-      <Dropdown item simple text='Dropdown'>
-        <Dropdown.Menu>
-          <Dropdown.Item>List Item</Dropdown.Item>
-          <Dropdown.Item>List Item</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Header>Header Item</Dropdown.Header>
-          <Dropdown.Item>
-            <i className='dropdown icon' />
-            <span className='text'>Submenu</span>
-            <Dropdown.Menu>
-              <Dropdown.Item>List Item</Dropdown.Item>
-              <Dropdown.Item>List Item</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown.Item>
-          <Dropdown.Item>List Item</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+      {/* <Menu.Item as='a' position="right">Home</Menu.Item> */}
     </Container>
   </Menu>
   );
